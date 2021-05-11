@@ -3,8 +3,9 @@ from users.models import CustomUser
 import random
 # Create your models here.
 
+
 class Code(models.Model):
-    number = models.CharField(max_length=5, blank=True)
+    number = models.CharField(max_length=6, blank=True)
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -19,5 +20,5 @@ class Code(models.Model):
             code_items.append(num)
 
         code_string = "".join(str(item) for item in code_items)
-        self.number = code_string    
+        self.number = code_string
         super().save(*args, **kwargs)

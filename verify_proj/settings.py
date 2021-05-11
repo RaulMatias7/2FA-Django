@@ -40,14 +40,14 @@ INSTALLED_APPS = [
 
     'codes',
     'users',
-    #pip install django-crispy-forms
+    # pip install django-crispy-forms
     'crispy_forms'
 ]
-#pip install twilio
+# pip install twilio
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = '/login/'
-#default: accounts/login/
+# default: accounts/login/
 AUTH_USER_MODEL = 'users.CustomUser'
 
 
@@ -66,7 +66,9 @@ ROOT_URLCONF = 'verify_proj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'NAME': os.path.join(BASE_DIR, 'templates'),
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
